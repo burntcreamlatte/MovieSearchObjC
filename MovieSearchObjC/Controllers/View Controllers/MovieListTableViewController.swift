@@ -13,30 +13,49 @@ class MovieListTableViewController: UITableViewController {
     
     @IBOutlet weak var movieSearchBar: UISearchBar!
     
+    // MARK: - Properties
+    var movies = [AARMovie]() {
+        //reload view when the array of movies update
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
+    
     // MARK: - Lifecycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        movieSearchBar.delegate = self
         
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 1
+        return movies.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as? MovieTableViewCell else { return UITableViewCell() }
         
-        
+        let movie = movies[indexPath.row]
+        cell.movie = movie
         
         return cell
     }
-    
-    // MARK: - Helper Methods
-    func fetchMovies() {
-        AARMovieController.
+}
+
+extension MovieListTableViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchTerm = searchBar.text else { return }
+        
+        AARMovieController.fetchMovies(with: searchTerm) { (movies) in
+            guard let movies = movies else { return }
+            DispatchQueue.main.async {
+                self.movies = movies
+            }
+        }
     }
 }
+

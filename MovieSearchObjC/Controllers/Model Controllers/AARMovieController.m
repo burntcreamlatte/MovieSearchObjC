@@ -9,24 +9,30 @@
 #import "AARMovieController.h"
 #import "AARMovie.h"
 
-static NSString *const baseURLString = @"https://api.themoviedb.org/3/";
-static NSString *const searchComponent = @"search";
-static NSString *const movieComponent = @"movie";
-static NSString *const movieQuery = @"query";
-static NSString *const apiQuery = @"api_key";
-static NSString *const apiKey = @"db2916b46a4319f5aa22a803f48226ac";
+//append in said order
+static NSString *const baseURLString = @"https://api.themoviedb.org/3/"; //1
+static NSString *const searchComponent = @"search"; //2
+static NSString *const movieComponent = @"movie/"; //3
+static NSString *const apiQuery = @"api_key"; //4-1
+static NSString *const apiKey = @"db2916b46a4319f5aa22a803f48226ac"; //4-2
+static NSString *const movieSearchQuery = @"query"; //5
 
 
 @implementation AARMovieController
 
 +(void)fetchMoviesWith:(NSString *)searchTerm
-                completion:(void (^)(NSArray<AARMovie *> * _Nullable))completion
+                completion:(void (^)(NSArray<AARMovie *> * _Nullable))completion //nullable completion necessary to complete with nil
 {
-    NSURLComponents *urlComponents = [NSURLComponents componentsWithString:baseURLString];
-    NSURLQueryItem *apiQueryItem = [NSURLQueryItem queryItemWithName:apiQuery value:apiKey];
-    NSURLQueryItem *searchQueryItem = [NSURLQueryItem queryItemWithName:searchComponent value:searchTerm];
+    //REVIEW -- there is a faster way but went with this for now; would like to see it done faster
+    NSURL *baseURL = [NSURL URLWithString:baseURLString];
+    NSURL *searchURL = [baseURL URLByAppendingPathComponent:searchComponent];
+    NSURL *movieURL = [searchURL URLByAppendingPathComponent:movieComponent];
     
-    urlComponents.queryItems = @[apiQueryItem, searchQueryItem];
+    NSURLComponents *urlComponents = [NSURLComponents componentsWithURL:movieURL resolvingAgainstBaseURL:true];
+    NSURLQueryItem *apiQueryItem = [NSURLQueryItem queryItemWithName:apiQuery value:apiKey];
+    NSURLQueryItem *movieSearchQueryItem = [NSURLQueryItem queryItemWithName:movieSearchQuery value:searchTerm];
+    
+    urlComponents.queryItems = @[apiQueryItem, movieSearchQueryItem];
     NSURL *finalURL = urlComponents.URL;
     NSLog(@"%@", finalURL);
     
@@ -57,6 +63,7 @@ static NSString *const apiKey = @"db2916b46a4319f5aa22a803f48226ac";
         NSMutableArray *movies = [NSMutableArray new];
         for (NSDictionary *movieDict in jsonDict[@"results"])
         {
+            //creating Movie objects init'd and adding to a [Movie]
             AARMovie *movie = [[AARMovie alloc] initWithDictionary:movieDict];
             [movies addObject:movie];
         }
