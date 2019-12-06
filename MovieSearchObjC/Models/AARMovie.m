@@ -8,6 +8,7 @@
 
 #import "AARMovie.h"
 
+//our Obj-C CodingKeys
 static NSString *const titleKey = @"original_title";
 static NSString *const overviewKey = @"overview";
 static NSString *const ratingKey = @"vote_average";
@@ -32,6 +33,7 @@ static NSString *const ratingKey = @"vote_average";
 
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
+    //passing our CodingKeys to the dictionary init
     NSString *title = dictionary[titleKey];
     NSString *overview = dictionary[overviewKey];
     NSNumber *rating = dictionary[ratingKey];

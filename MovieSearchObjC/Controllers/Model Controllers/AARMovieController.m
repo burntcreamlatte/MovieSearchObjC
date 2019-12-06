@@ -34,6 +34,7 @@ static NSString *const movieSearchQuery = @"query"; //5
     
     urlComponents.queryItems = @[apiQueryItem, movieSearchQueryItem];
     NSURL *finalURL = urlComponents.URL;
+    //printing finalURL to console to verify json
     NSLog(@"%@", finalURL);
     
     [[NSURLSession.sharedSession dataTaskWithURL:finalURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
@@ -46,7 +47,7 @@ static NSString *const movieSearchQuery = @"query"; //5
         {
             NSLog(@"Response: %@", response);
         }
-        if (!data)
+        if (!data) //REVIEW -- is this a better way to handle data? bottom of dataTask is where we know our data is
         {
             NSLog(@"No data found. /n");
             NSLog(@"Error\nIn %s: %@\n---\n%@", __PRETTY_FUNCTION__, error.localizedDescription, error);

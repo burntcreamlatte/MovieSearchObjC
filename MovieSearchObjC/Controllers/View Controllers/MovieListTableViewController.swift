@@ -10,7 +10,7 @@ import UIKit
 
 class MovieListTableViewController: UITableViewController {
 
-    
+    //REVIEW -- how would we imbed the search bar into the nav bar?
     @IBOutlet weak var movieSearchBar: UISearchBar!
     
     // MARK: - Properties
@@ -21,14 +21,15 @@ class MovieListTableViewController: UITableViewController {
         }
     }
     
+    
     // MARK: - Lifecycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         movieSearchBar.delegate = self
-        
     }
+    
 
     // MARK: - Table view data source
 
@@ -52,6 +53,7 @@ extension MovieListTableViewController: UISearchBarDelegate {
         
         AARMovieController.fetchMovies(with: searchTerm) { (movies) in
             guard let movies = movies else { return }
+            //return to main thread for UI elements
             DispatchQueue.main.async {
                 self.movies = movies
             }

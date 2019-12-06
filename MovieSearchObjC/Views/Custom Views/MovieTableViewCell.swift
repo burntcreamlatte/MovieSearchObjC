@@ -18,7 +18,7 @@ class MovieTableViewCell: UITableViewCell {
         didSet {
             movieTitleLabel.text = movie?.title
             //adding default value in case of rating = nil
-            //REVIEW -- entering "star wars" to search results in a rating of 8.199999999999999
+            //REVIEW -- entering "star wars" to search results in a rating of 8.199999999999999, NSNumber is able to change type?
             movieRatingLabel.text = "Rating: \(movie?.rating ?? 0.0)"
             movieOverviewLabel.text = movie?.overview
         }
