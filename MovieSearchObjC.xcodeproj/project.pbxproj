@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		ABF8657D239AB42F00DC06ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF8657C239AB42F00DC06ED /* AppDelegate.m */; };
 		ABF86580239AB42F00DC06ED /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF8657F239AB42F00DC06ED /* SceneDelegate.m */; };
-		ABF86583239AB42F00DC06ED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF86582239AB42F00DC06ED /* ViewController.m */; };
 		ABF86586239AB42F00DC06ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABF86584239AB42F00DC06ED /* Main.storyboard */; };
 		ABF86588239AB43000DC06ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABF86587239AB43000DC06ED /* Assets.xcassets */; };
 		ABF8658B239AB43000DC06ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABF86589239AB43000DC06ED /* LaunchScreen.storyboard */; };
 		ABF8658E239AB43000DC06ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF8658D239AB43000DC06ED /* main.m */; };
+		ABF865A1239AB57300DC06ED /* AARMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF865A0239AB57300DC06ED /* AARMovie.m */; };
+		ABF865A4239AB58C00DC06ED /* AARMovieController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF865A3239AB58C00DC06ED /* AARMovieController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,13 +23,15 @@
 		ABF8657C239AB42F00DC06ED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		ABF8657E239AB42F00DC06ED /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		ABF8657F239AB42F00DC06ED /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		ABF86581239AB42F00DC06ED /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		ABF86582239AB42F00DC06ED /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		ABF86585239AB42F00DC06ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ABF86587239AB43000DC06ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABF8658A239AB43000DC06ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABF8658C239AB43000DC06ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABF8658D239AB43000DC06ED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ABF8659F239AB57300DC06ED /* AARMovie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AARMovie.h; sourceTree = "<group>"; };
+		ABF865A0239AB57300DC06ED /* AARMovie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AARMovie.m; sourceTree = "<group>"; };
+		ABF865A2239AB58C00DC06ED /* AARMovieController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AARMovieController.h; sourceTree = "<group>"; };
+		ABF865A3239AB58C00DC06ED /* AARMovieController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AARMovieController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,19 +64,85 @@
 		ABF8657A239AB42F00DC06ED /* MovieSearchObjC */ = {
 			isa = PBXGroup;
 			children = (
+				ABF86599239AB46700DC06ED /* Views */,
+				ABF86598239AB45F00DC06ED /* Controllers */,
+				ABF86595239AB44C00DC06ED /* Models */,
+				ABF86594239AB44500DC06ED /* Resources */,
+				ABF86584239AB42F00DC06ED /* Main.storyboard */,
+				ABF86589239AB43000DC06ED /* LaunchScreen.storyboard */,
+			);
+			path = MovieSearchObjC;
+			sourceTree = "<group>";
+		};
+		ABF86594239AB44500DC06ED /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				ABF8657B239AB42F00DC06ED /* AppDelegate.h */,
 				ABF8657C239AB42F00DC06ED /* AppDelegate.m */,
 				ABF8657E239AB42F00DC06ED /* SceneDelegate.h */,
 				ABF8657F239AB42F00DC06ED /* SceneDelegate.m */,
-				ABF86581239AB42F00DC06ED /* ViewController.h */,
-				ABF86582239AB42F00DC06ED /* ViewController.m */,
-				ABF86584239AB42F00DC06ED /* Main.storyboard */,
 				ABF86587239AB43000DC06ED /* Assets.xcassets */,
-				ABF86589239AB43000DC06ED /* LaunchScreen.storyboard */,
 				ABF8658C239AB43000DC06ED /* Info.plist */,
 				ABF8658D239AB43000DC06ED /* main.m */,
 			);
-			path = MovieSearchObjC;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		ABF86595239AB44C00DC06ED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ABF8659F239AB57300DC06ED /* AARMovie.h */,
+				ABF865A0239AB57300DC06ED /* AARMovie.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ABF86596239AB45100DC06ED /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ABF865A2239AB58C00DC06ED /* AARMovieController.h */,
+				ABF865A3239AB58C00DC06ED /* AARMovieController.m */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		ABF86597239AB45700DC06ED /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		ABF86598239AB45F00DC06ED /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ABF86597239AB45700DC06ED /* View Controllers */,
+				ABF86596239AB45100DC06ED /* Model Controllers */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		ABF86599239AB46700DC06ED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ABF8659B239AB47100DC06ED /* Custom Views */,
+				ABF8659A239AB46B00DC06ED /* Storyboards */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ABF8659A239AB46B00DC06ED /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		ABF8659B239AB47100DC06ED /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,6 +171,7 @@
 		ABF86570239AB42E00DC06ED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = AAR;
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Aaron Shackelford";
 				TargetAttributes = {
@@ -146,8 +216,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABF86583239AB42F00DC06ED /* ViewController.m in Sources */,
 				ABF8657D239AB42F00DC06ED /* AppDelegate.m in Sources */,
+				ABF865A1239AB57300DC06ED /* AARMovie.m in Sources */,
+				ABF865A4239AB58C00DC06ED /* AARMovieController.m in Sources */,
 				ABF8658E239AB43000DC06ED /* main.m in Sources */,
 				ABF86580239AB42F00DC06ED /* SceneDelegate.m in Sources */,
 			);
@@ -291,7 +362,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69Y2XBHVDM;
-				INFOPLIST_FILE = MovieSearchObjC/Info.plist;
+				INFOPLIST_FILE = MovieSearchObjC/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,7 +379,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69Y2XBHVDM;
-				INFOPLIST_FILE = MovieSearchObjC/Info.plist;
+				INFOPLIST_FILE = MovieSearchObjC/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
