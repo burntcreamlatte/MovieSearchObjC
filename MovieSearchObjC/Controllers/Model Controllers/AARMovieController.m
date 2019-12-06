@@ -23,7 +23,7 @@ static NSString *const movieSearchQuery = @"query"; //5
 +(void)fetchMoviesWith:(NSString *)searchTerm
                 completion:(void (^)(NSArray<AARMovie *> * _Nullable))completion //nullable completion necessary to complete with nil
 {
-    //REVIEW -- there is a faster way but went with this for now; would like to see it done faster
+    //REVIEW -- there is a better way but went with this for now; would like to see it done faster
     NSURL *baseURL = [NSURL URLWithString:baseURLString];
     NSURL *searchURL = [baseURL URLByAppendingPathComponent:searchComponent];
     NSURL *movieURL = [searchURL URLByAppendingPathComponent:movieComponent];
@@ -37,6 +37,7 @@ static NSString *const movieSearchQuery = @"query"; //5
     //printing finalURL to console to verify json
     NSLog(@"%@", finalURL);
     
+    //dataTask
     [[NSURLSession.sharedSession dataTaskWithURL:finalURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error)
         {

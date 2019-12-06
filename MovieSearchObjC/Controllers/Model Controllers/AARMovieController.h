@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AARMovieController : NSObject
 
+//REVIEW -- is this good naming?
 +(void)fetchMoviesWith:(NSString *)searchTerm
                 completion:(void(^) (NSArray<AARMovie *> *_Nullable))completion;
 

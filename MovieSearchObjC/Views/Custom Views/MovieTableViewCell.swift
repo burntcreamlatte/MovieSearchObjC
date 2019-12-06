@@ -10,10 +10,13 @@ import UIKit
 
 class MovieTableViewCell: UITableViewCell {
 
+    // MARK: - Outlets
     @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var movieRatingLabel: UILabel!
     @IBOutlet weak var movieOverviewLabel: UILabel!
     
+    
+    // MARK: - Properties
     var movie: AARMovie? {
         didSet {
             movieTitleLabel.text = movie?.title
