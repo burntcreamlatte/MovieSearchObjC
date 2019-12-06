@@ -24,11 +24,12 @@ static NSString *const movieSearchQuery = @"query"; //5
                 completion:(void (^)(NSArray<AARMovie *> * _Nullable))completion //nullable completion necessary to complete with nil
 {
     //REVIEW -- there is a better way but went with this for now; would like to see it done faster
-    NSURL *baseURL = [NSURL URLWithString:baseURLString];
-    NSURL *searchURL = [baseURL URLByAppendingPathComponent:searchComponent];
-    NSURL *movieURL = [searchURL URLByAppendingPathComponent:movieComponent];
+    NSURL *baseURL = [[[NSURL URLWithString:baseURLString] URLByAppendingPathComponent:searchComponent] URLByAppendingPathComponent:movieComponent];
     
-    NSURLComponents *urlComponents = [NSURLComponents componentsWithURL:movieURL resolvingAgainstBaseURL:true];
+    //NSURL *searchURL = [baseURL URLByAppendingPathComponent:searchComponent];
+    //NSURL *movieURL = [searchURL URLByAppendingPathComponent:movieComponent];
+    
+    NSURLComponents *urlComponents = [NSURLComponents componentsWithURL:baseURL resolvingAgainstBaseURL:true];
     NSURLQueryItem *apiQueryItem = [NSURLQueryItem queryItemWithName:apiQuery value:apiKey];
     NSURLQueryItem *movieSearchQueryItem = [NSURLQueryItem queryItemWithName:movieSearchQuery value:searchTerm];
     

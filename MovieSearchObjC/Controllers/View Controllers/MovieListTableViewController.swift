@@ -14,7 +14,6 @@ class MovieListTableViewController: UITableViewController {
     //REVIEW -- how would we imbed the search bar into the nav bar?
     @IBOutlet weak var movieSearchBar: UISearchBar!
     
-    
     // MARK: - Properties
     var movies = [AARMovie]() {
         //reload view when the array of movies update
@@ -23,14 +22,11 @@ class MovieListTableViewController: UITableViewController {
         }
     }
     
-    
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         movieSearchBar.delegate = self
     }
-    
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
