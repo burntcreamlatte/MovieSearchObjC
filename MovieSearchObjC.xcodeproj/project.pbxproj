@@ -15,6 +15,8 @@
 		ABF8658E239AB43000DC06ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF8658D239AB43000DC06ED /* main.m */; };
 		ABF865A1239AB57300DC06ED /* AARMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF865A0239AB57300DC06ED /* AARMovie.m */; };
 		ABF865A4239AB58C00DC06ED /* AARMovieController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF865A3239AB58C00DC06ED /* AARMovieController.m */; };
+		ABF865A7239AC27300DC06ED /* MovieListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF865A6239AC27300DC06ED /* MovieListTableViewController.swift */; };
+		ABF865A9239AC43000DC06ED /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF865A8239AC43000DC06ED /* MovieTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,9 @@
 		ABF865A0239AB57300DC06ED /* AARMovie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AARMovie.m; sourceTree = "<group>"; };
 		ABF865A2239AB58C00DC06ED /* AARMovieController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AARMovieController.h; sourceTree = "<group>"; };
 		ABF865A3239AB58C00DC06ED /* AARMovieController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AARMovieController.m; sourceTree = "<group>"; };
+		ABF865A5239AC27300DC06ED /* MovieSearchObjC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MovieSearchObjC-Bridging-Header.h"; sourceTree = "<group>"; };
+		ABF865A6239AC27300DC06ED /* MovieListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListTableViewController.swift; sourceTree = "<group>"; };
+		ABF865A8239AC43000DC06ED /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,8 +73,6 @@
 				ABF86598239AB45F00DC06ED /* Controllers */,
 				ABF86595239AB44C00DC06ED /* Models */,
 				ABF86594239AB44500DC06ED /* Resources */,
-				ABF86584239AB42F00DC06ED /* Main.storyboard */,
-				ABF86589239AB43000DC06ED /* LaunchScreen.storyboard */,
 			);
 			path = MovieSearchObjC;
 			sourceTree = "<group>";
@@ -109,6 +112,8 @@
 		ABF86597239AB45700DC06ED /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				ABF865A6239AC27300DC06ED /* MovieListTableViewController.swift */,
+				ABF865A5239AC27300DC06ED /* MovieSearchObjC-Bridging-Header.h */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -134,6 +139,8 @@
 		ABF8659A239AB46B00DC06ED /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				ABF86584239AB42F00DC06ED /* Main.storyboard */,
+				ABF86589239AB43000DC06ED /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -141,6 +148,7 @@
 		ABF8659B239AB47100DC06ED /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				ABF865A8239AC43000DC06ED /* MovieTableViewCell.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -177,6 +185,7 @@
 				TargetAttributes = {
 					ABF86577239AB42E00DC06ED = {
 						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
@@ -216,7 +225,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABF865A7239AC27300DC06ED /* MovieListTableViewController.swift in Sources */,
 				ABF8657D239AB42F00DC06ED /* AppDelegate.m in Sources */,
+				ABF865A9239AC43000DC06ED /* MovieTableViewCell.swift in Sources */,
 				ABF865A1239AB57300DC06ED /* AARMovie.m in Sources */,
 				ABF865A4239AB58C00DC06ED /* AARMovieController.m in Sources */,
 				ABF8658E239AB43000DC06ED /* main.m in Sources */,
@@ -360,6 +371,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69Y2XBHVDM;
 				INFOPLIST_FILE = MovieSearchObjC/Resources/Info.plist;
@@ -369,6 +381,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = shackelford.MovieSearchObjC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MovieSearchObjC/Controllers/View Controllers/MovieSearchObjC-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -377,6 +392,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69Y2XBHVDM;
 				INFOPLIST_FILE = MovieSearchObjC/Resources/Info.plist;
@@ -386,6 +402,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = shackelford.MovieSearchObjC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MovieSearchObjC/Controllers/View Controllers/MovieSearchObjC-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

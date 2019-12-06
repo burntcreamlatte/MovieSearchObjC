@@ -19,7 +19,7 @@ static NSString *const apiKey = @"db2916b46a4319f5aa22a803f48226ac";
 
 @implementation AARMovieController
 
-+(void)fetchSearchedMovies:(NSString *)searchTerm
++(void)fetchMoviesWith:(NSString *)searchTerm
                 completion:(void (^)(NSArray<AARMovie *> * _Nullable))completion
 {
     NSURLComponents *urlComponents = [NSURLComponents componentsWithString:baseURLString];

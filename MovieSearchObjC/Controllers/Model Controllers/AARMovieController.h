@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AARMovieController : NSObject
 
-+(void)fetchSearchedMovies:(NSString *)searchTerm
++(void)fetchMoviesWith:(NSString *)searchTerm
                 completion:(void(^) (NSArray<AARMovie *> *_Nullable))completion;
 
 @end
